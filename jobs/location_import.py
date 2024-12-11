@@ -20,7 +20,7 @@ class LocationImportJob(Job):
     def _process_csv_file(self, csv_file):
         """Convert CSV data into a dictionary containing Nautobot objects."""
         self.logger.info("Decoding CSV file...")
-        decoded_csv_file = csv_file.read().decode("utf-8")
+        decoded_csv_file = csv_file.read()
         for row in decoded_csv_file:
             print(row)
         # csv_reader = csv.DictReader(StringIO(decoded_csv_file))
