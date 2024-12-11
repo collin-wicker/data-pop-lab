@@ -29,7 +29,7 @@ class LocationImportJob(Job):
         self.logger.info("Decoding CSV file...")
         with csv_file.open(mode="rb") as file:
             text_file = TextIOWrapper(file, encoding="utf-8")
-            csv_reader = csv.DictReader(file)
+            csv_reader = csv.DictReader(text_file)
             state_location_type = LocationType.objects.get(name="State")
             city_location_type = LocationType.objects.get(name="City")
             active_status_object = Status.objects.get(name="Active")
