@@ -10,3 +10,6 @@ class LocationImportJob(Job):
         name = "Location Import Job"
         description = "This job imports locations from a CSV file or CSV text input."
     
+    def run(self):
+        """Do actions."""
+    
