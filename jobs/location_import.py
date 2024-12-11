@@ -27,7 +27,7 @@ class LocationImportJob(Job):
     def _process_csv_file(self, csv_file):
         """Convert CSV data into a dictionary containing Nautobot objects."""
         self.logger.info("Decoding CSV file...")
-        with open(csv_file, "rb") as file:
+        with csv_file.open(mode="rb") as file:
             text_file = TextIOWrapper(file, encoding="utf-8")
             csv_reader = csv.DictReader(file)
             state_location_type = LocationType.objects.get(name="State")
