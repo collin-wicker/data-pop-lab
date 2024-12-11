@@ -30,6 +30,6 @@ class LocationImportJob(Job):
     
     def run(self, csv_file):
         """Do actions."""
-       _process_csv_file(csv_file)
+        self._process_csv_file(csv_file)
 
 register_jobs(LocationImportJob)
