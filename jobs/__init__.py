@@ -1,1 +1,1 @@
-from . import location_import
+from . import location_import, test_job
