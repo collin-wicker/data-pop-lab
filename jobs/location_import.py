@@ -1,7 +1,9 @@
-from nautobot.apps.jobs import Job, register_jobs
+from nautobot.apps.jobs import FileVar, Job, register_jobs
 
 class LocationImportJob(Job):
     """This job imports locations from a CSV file or CSV text input."""
+
+    file_input = FileVar()
 
     class Meta: 
         name = "Location Import Job"
