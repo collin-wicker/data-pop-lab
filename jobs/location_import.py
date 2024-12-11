@@ -95,6 +95,6 @@ class LocationImportJob(Job):
             if site_object_created:
                 self.logger.info(f"Created the Following Entry - Site Name: {row['name']}, City: {row['city']}, State: {state}, Location Type: {site_location_type}")
             else:
-                self.logger.info("Site already Exists")
+                self.logger.info(f"Site: {row['name']} already Exists")
 
 register_jobs(LocationImportJob)
