@@ -11,5 +11,6 @@ class LocationImportJob(Job):
     
     def run(self):
         """Do actions."""
+        pass
 
 register_jobs(LocationImportJob)
