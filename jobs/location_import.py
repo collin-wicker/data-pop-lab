@@ -1,4 +1,4 @@
-from nautobot.apps.jobs import Job
+from nautobot.apps.jobs import Job, register_jobs
 from nautobot.extras.jobs import FileVar
 
 class LocationImportJob(Job):
@@ -12,4 +12,5 @@ class LocationImportJob(Job):
     
     def run(self):
         """Do actions."""
-    
+
+register_jobs(LocationImportJob)
