@@ -13,10 +13,11 @@ class LocationImportJob(Job):
     
     def run(self, file_input):
         """Do actions."""
+        file_input.form_field.to_python()
         # Open the CSV file
-        with open(file_input, mode='r') as file:
-            csv_reader = csv.DictReader(file)
-            for row in csv_reader:
-                print(row)
+        # with open(file_input, mode='r') as file:
+        #     csv_reader = csv.DictReader(file)
+        #     for row in csv_reader:
+        #         print(row)
 
 register_jobs(LocationImportJob)
