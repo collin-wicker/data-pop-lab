@@ -21,7 +21,8 @@ class LocationImportJob(Job):
         """Convert CSV data into a dictionary containing Nautobot objects."""
         self.logger.info("Decoding CSV file...")
         decoded_csv_file = csv_file.read().decode("utf-8")
-        print(decoded_csv_file)
+        for row in decoded_csv_file:
+            print(row)
         # csv_reader = csv.DictReader(StringIO(decoded_csv_file))
         # self.logger.info("Processing CSV data...")
         # processing_failed = False
