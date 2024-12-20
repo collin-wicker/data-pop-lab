@@ -29,5 +29,5 @@ sync_devices:
       - command: "show interface all | as json"
         parser: "none"
         jpath: "interfaces[?name == 'mgmt0'].subinterfaces[].address[?type == 'IPv4'].prefix"
-        post_processor: "{{ obj[0] | split('/') | last }}"
+        post_processor: "{{ obj[0][0] | split('/') | last }}"
         iterable_type: "str"
