@@ -17,7 +17,7 @@ sync_devices:
       - command: "show version | as json"
         parser: "none"
         jpath: '"basic system info"."Chassis Type"'
-        post_processor: "{{ obj | upper }}"
+        iterable_type: "str"
   mgmt_interface:
     commands:
       - command: "show interface all | as json"
@@ -30,3 +30,4 @@ sync_devices:
         parser: "none"
         jpath: "interfaces[?name == 'mgmt0'].subinterfaces[].address[?type == 'IPv4'].prefix"
         post_processor: "{{ obj[0] | split('/') | last }}"
+        iterable_type: "str"
