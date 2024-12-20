@@ -1,5 +1,4 @@
 import csv
-import logging
 from io import TextIOWrapper
 
 from nautobot.apps.jobs import FileVar, Job, register_jobs
